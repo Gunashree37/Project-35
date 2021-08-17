@@ -2,22 +2,25 @@ var ball,ballImg,bg;
 var database;
 
 function preload(){
-    bg = loadImage("bg.png");
-    ballImg = loadImage("ball.png");
+    
+    
+    
+    
 }
 
 function setup(){
     createCanvas(1000,500);
     database = firebase.database();
     ball = createSprite(250,250,10,10);
-    ball.addImage(ballImg);
+   
+    
     ball.scale = 0.6;
     var lc = database.ref("Ball/position");
     lc.on("value",readop);
 }
 
 function draw(){
-    background(bg);
+    background("white);
     if(keyDown(LEFT_ARROW)){
         changePosition(-1,0);
     }
